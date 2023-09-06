@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "homepage": "https://gitname.github.io/react-gh-pages",
+  "homepage": "https://sme777.github.io/react-gh-pages",
   "description": "Portfolio site for Samson Petrosyan",
   "repository": "https://github.com/sme777/website.git",
   "author": "Samson Petrosyan <hello@spetrosyan.com>",
@@ -49,8 +49,13 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "dev": "next dev",
+    "build": "next build && next export -o build/",
+    "build:storybook": "build-storybook -o build-storybook && node scripts/draco-storybook",
+    "deploy:functions": "cd functions && npm run deploy",
+    "start": "next start",
+    "test": "echo 'write some tests'",
+    "storybook": "start-storybook -p 9009 -h localhost"
   },
   "browserslist": {
     "production": [
